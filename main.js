@@ -23,4 +23,17 @@ while (hour<12){
     let fishValue = randomValue();
     totalCaughtValue = totalWeight();
     totalCaughtValue = totalValue();
+
+    const fish = {
+        fish: randomFish,
+        weight: Number(fishWeight),
+        value: Number(fishValue)
+    }
+
+    console.log(`The time is ${hour}:00 am. So far you caught: \n${caughtFish.length} fish \nTotal weight of: ${totalCaughtWeight} lbs \nValued at: $${totalCaughtValue.toFixed(2)}`);
+    console.log("");
+    console.log("==============================================================");
+    console.log("");
+    console.log(`You caught a ${randomFish} weighing ${fishWeight} lbs \nwith a value of $${fishValue}!`);
+    console.log("");
 }
