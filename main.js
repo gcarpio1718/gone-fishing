@@ -36,4 +36,20 @@ while (hour<12){
     console.log("");
     console.log(`You caught a ${randomFish} weighing ${fishWeight} lbs \nwith a value of $${fishValue}!`);
     console.log("");
+
+    if ((totalCaughtWeight + fish.weight)<10){
+        console.log("Sorry this fish is too big. \nYou have to let it go.")
+        console.log("");
+    }
+    else if((totalCaughtWeight + fish.weight)<10){
+        let catchOrRelease = prompt("Do you want to [c]atch or [r]elease this bad boy?");
+
+        if (catchOrRelease==="c"){
+            caughtFish.push(fish);
+            console.log("")
+            console.log("This is a good choice.");
+            console.log("");
+            console.log("===============================================================");
+        }
+    }
 }
