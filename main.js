@@ -51,5 +51,52 @@ while (hour<12){
             console.log("");
             console.log("===============================================================");
         }
+        else if (catchOrRelease==="r"){
+            console.log("")
+            console.log("Good, that looked bad.");
+            console.log("")
+            console.log("================================================================");
+
+        }
+
+        hour++;
+    }
+
+    console.log("");
+    console.log(`The time is 12pm. Game over.`)
+    console.log(`You caught ${caughtFish.length} fish, for a total weight of ${totalCaughtWeight} lbs and a total value of $${totalCaughtValue.toFixed(2)}.`)
+    console.log("");
+    console.log("___________________________________________________________________________________________");
+
+
+    function randomFishGenerator(){
+        let randomAdjective1 = fishAdjectives1[Math.floor(Math.random()* fishAdjectives1.length)];
+        let randomAdjective2 = fishAdjectives2[Math.floor(Math.random()* fishAdjectives2.length)];
+        let randomFishType = fishTypes[Math.floor(Math.random()*fishTypes.length)];
+        return `${randomAdjective1} ${randomAdjective2} ${randomFishType}`;
+    }
+
+    function randomWeight(min, max){
+        let weight = (Math.floor(Math.random()* (4.00 - 1.00 + 1.00) + 1.00).toFixed(2));
+        return weight;
+
+        function randomValue(min, max){
+            let value = (Math.random()* (10.00 - 1.00 + 1.00) + 1.00).toFixed(2);
+            return value;
+        }
+
+        function totalWeight(){
+            let sum =0;
+            for (let i=0;i<caughtFish.length; i++)
+            sum=sum+caughtFish[i].weight;
+            return sum;
+        }
+        function totalValue(){
+            let sum = 0;
+            for (let i=0;i<caughtFish.length; i++){
+                sum=sum + caughtFish[i].value;
+            }
+            return sum;
+        }
     }
 }
